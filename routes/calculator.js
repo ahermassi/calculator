@@ -8,7 +8,9 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     let data = req.body;
     let firstOperand = data['first-operand'], secondOperand = data['second-operand'], operator = data.operator;
-    console.log(parseFloat(firstOperand) + parseFloat(secondOperand));
+    let operation = {'add': (a, b) => a + b, 'subtract': (a, b) => a - b, 'multiply': (a, b) => a * b,
+        'divide': (a, b) => a / b};
+    console.log(operation[operator](parseFloat(firstOperand), parseFloat(secondOperand)));
 });
 
 module.exports = router;
