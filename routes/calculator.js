@@ -20,7 +20,15 @@ router.post('/', async (req, res) => {
     } catch (e) {
         res.status(500).json({ error: e.toString() });
     }
+});
 
+router.post('/fetch', async (req, res) => {
+    try {
+        const last10Calculations = await calculationsData.getCalculationsByLimit(10);
+        res.render('partials/fetch', {layout:null, data: last10Calculations});
+    } catch (e) {
+        res.status(500).json({ error: e.toString() });
+    }
 });
 
 module.exports = router;

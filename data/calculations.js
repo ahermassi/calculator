@@ -34,6 +34,11 @@ module.exports = {
         if (calculation === null) throw 'No calculation with this id';
 
         return calculation;
+    },
+
+    async getCalculationsByLimit(limit) {
+        const calculationsCollection = await calculations();
+        return calculationsCollection.find().sort({timestamp: -1}).limit(10).toArray();
     }
 };
 
