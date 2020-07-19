@@ -16,6 +16,7 @@
   "homepage": "https://github.com/ahermassi/calculator#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "express-handlebars": "^5.1.0"
+    "express-handlebars": "^5.1.0",
+    "mongodb": "^3.5.9"
   }
 }
