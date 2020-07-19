@@ -9,6 +9,28 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
     let data = req.body;
+    let errors = [];
+
+    if(data.firstOperand === null)
+        errors.push('First operand field can\'t be empty');
+
+    else if (isNaN(data.firstOperand))
+            errors.push('First operand has to be a number');
+
+    if(data.secondOperand === null)
+        errors.push('Second operand field can\'t be empty');
+
+    else if (isNaN(data.secondOperand))
+        errors.push('Second operand has to be a number');
+
+    if (errors.length > 0) {
+        res.render('/', {
+            errors: errors,
+            hasErrors: true
+        });
+        return;
+    }
+
     let firstOperand = data.firstOperand, secondOperand = data.secondOperand, operator = data.operator;
     let operation = {'+': (a, b) => a + b, '-': (a, b) => a - b, '*': (a, b) => a * b, '/': (a, b) => a / b};
     const result = operation[operator](parseFloat(firstOperand), parseFloat(secondOperand));

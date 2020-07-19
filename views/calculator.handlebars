@@ -1,8 +1,8 @@
 <main>
     <p>Best calculator</p>
-    <form class="calculator-form" id="form">
+    <form action="/calculator" method="post" class="calculator-form" id="form">
         <label for="first-operand">First number:</label>
-        <input type="text" name="first-operand" id="first-operand" class="full-width-input form-control" />
+        <input type="text" name="firstOperand" id="first-operand" class="full-width-input form-control" />
         <span id="first-operand-error" hidden></span><br>
         <label for="operator"></label>
             <select id="operator" name="operator">
@@ -13,7 +13,7 @@
             </select>
         <br>
         <label for="second-operand">Second number:</label>
-        <input type="text" name="second-operand" id="second-operand" class="full-width-input form-control" />
+        <input type="text" name="secondOperand" id="second-operand" class="full-width-input form-control" />
         <span id="second-operand-error" hidden></span><br>
         <button type="submit">Calculate</button>
     </form>
