@@ -1,0 +1,20 @@
+{
+  "name": "remote-calculator",
+  "version": "1.0.0",
+  "description": "Calculator web application that logs 10 last calculations",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahermassi/calculator.git"
+  },
+  "author": "Anouer Hermassi",
+  "license": "ISC",
+  "homepage": "https://github.com/ahermassi/calculator#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
