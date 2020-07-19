@@ -25,7 +25,7 @@ function validateInput(input, errorSpan) {
         firstOperandError.attr('hidden', true);
         secondOperandError.attr('hidden', true);
         let firstOperand = $('#first-operand').val(), secondOperand = $('#second-operand').val(),
-            operator = $('#operator').val();
+            operator = $('input[name=operator]:checked').val();
 
         let firstOperandValid = validateInput(firstOperand, firstOperandError);
         let secondOperandValid = validateInput(secondOperand, secondOperandError);

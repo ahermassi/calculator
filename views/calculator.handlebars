@@ -1,19 +1,15 @@
 <main>
-    <p>Best calculator</p>
+    <p>This calculator logs the 10 recent calculations</p>
     <form action="/calculator" method="post" class="calculator-form" id="form">
         <label for="first-operand">First number:</label>
-        <input type="text" name="firstOperand" id="first-operand" class="full-width-input form-control" />
+        <input type="number" name="firstOperand" id="first-operand" class="full-width-input form-control" />
         <span id="first-operand-error" hidden></span><br>
-        <label for="operator"></label>
-            <select id="operator" name="operator">
-                <option value="+" selected>+</option>
-                <option value="-">-</option>
-                <option value="*">*</option>
-                <option value="/">/</option>
-            </select>
-        <br>
+        <label for="add"></label><input type="radio" id="add" name="operator" value="+">+ &nbsp;&nbsp;
+        <label for="subtract"></label><input type="radio" id="subtract" name="operator" value="-">- &nbsp;&nbsp;
+        <label for="multiply"></label><input type="radio" id="multiply" name="operator" value="*">* &nbsp;&nbsp;
+        <label for="divide"></label><input type="radio" id="divide" name="operator" value="/">/<br><br>
         <label for="second-operand">Second number:</label>
-        <input type="text" name="secondOperand" id="second-operand" class="full-width-input form-control" />
+        <input type="number" name="secondOperand" id="second-operand" class="full-width-input form-control" />
         <span id="second-operand-error" hidden></span><br>
         <button type="submit">Calculate</button>
     </form>
