@@ -1,6 +1,6 @@
 function fetch($) {
-    var recentCalculations = $('#recent-calculations');
-    var requestConfig = {
+    let recentCalculations = $('#recent-calculations');
+    let requestConfig = {
         method: 'post',
         url: '/calculator/fetch',
         contentType: 'application/json'
