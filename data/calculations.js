@@ -6,7 +6,7 @@ module.exports = {
     async addCalculation(calculation, result, timestamp) {
         if(!calculation || typeof calculation!= 'string') throw 'you must provide a valid calculation string';
         if(!result || typeof result!= 'number') throw 'you must provide a valid calculation result';
-        if(!timestamp || typeof timestamp!= 'string') throw 'you must provide a valid timestamp';
+        if(!timestamp) throw 'you must provide a valid timestamp';
 
         const calculationsCollection = await calculations();
         let newCalculation = {
