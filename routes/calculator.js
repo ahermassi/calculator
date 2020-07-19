@@ -9,14 +9,13 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
     let data = req.body;
-    let firstOperand = data['first-operand'], secondOperand = data['second-operand'], operator = data.operator;
+    let firstOperand = data.firstOperand, secondOperand = data.secondOperand, operator = data.operator;
     let operation = {'+': (a, b) => a + b, '-': (a, b) => a - b, '*': (a, b) => a * b, '/': (a, b) => a / b};
     const result = operation[operator](parseFloat(firstOperand), parseFloat(secondOperand));
     console.log(result);
     try {
         const newCalculation = await calculationsData.addCalculation(firstOperand + operator + secondOperand,
             result, Date.now());
-        res.redirect('/');
     } catch (e) {
         res.status(500).json({ error: e.toString() });
     }
