@@ -36,7 +36,7 @@ router.post('/', async (req, res) => {
     const result = operation[operator](parseFloat(firstOperand), parseFloat(secondOperand));
     console.log(result);
     try {
-        const newCalculation = await calculationsData.addCalculation(firstOperand + operator + secondOperand,
+        const newCalculation = await calculationsData.addCalculation(firstOperand + " " + operator + secondOperand,
             result, Date.now());
     } catch (e) {
         res.status(500).json({ error: e.toString() });
