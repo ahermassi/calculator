@@ -13,5 +13,5 @@ function fetch($) {
 }
 
 setInterval(function() {
-    fetch(window.jQuery) // This will run after every 1 second
+    fetch(window.jQuery) // This will run every 1 second
 }, 1000);

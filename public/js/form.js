@@ -1,4 +1,4 @@
-function validateInput(input, errorSpan) {
+function validateInput(input, errorSpan) { // Check if the input is empty or doesn't contain a number
     let isValid = true;
     if (!input) {
         isValid = false;
@@ -30,7 +30,7 @@ function validateInput(input, errorSpan) {
         let firstOperandValid = validateInput(firstOperand, firstOperandError);
         let secondOperandValid = validateInput(secondOperand, secondOperandError);
 
-        if(firstOperandValid && secondOperandValid) {
+        if(firstOperandValid && secondOperandValid) {  // Send AJAX request only if both input fields are valid
             firstOperandError.attr('hidden', true);
             secondOperandError.attr('hidden', true);
             let requestConfig = {
