@@ -34,13 +34,12 @@ router.post('/', async (req, res) => {
     let firstOperand = data.firstOperand, secondOperand = data.secondOperand, operator = data.operator;
     let operation = {'+': (a, b) => a + b, '-': (a, b) => a - b, '*': (a, b) => a * b, '/': (a, b) => a / b};
     const result = operation[operator](parseFloat(firstOperand), parseFloat(secondOperand));
-    console.log(result);
     try {
         let secondOperandToken = secondOperand;
-        if (secondOperand < 0)
+        if (secondOperand < 0)  // Wrap the number in parentheses if it's negative
             secondOperandToken = "(" + secondOperand + ")";
-        const newCalculation = await calculationsData.addCalculation(firstOperand + " " + operator +
-            " " + secondOperandToken, result, Date.now());
+        await calculationsData.addCalculation(firstOperand + " " + operator + " " + secondOperandToken,
+            result, Date.now());
     } catch (e) {
         res.status(500).json({ error: e.toString() });
     }
